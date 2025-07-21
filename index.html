@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Certificate Validation - ApexPlanet Software Pvt Ltd</title>
+    <title>Certificate Validation - ApexPlanet</title>
     <style>
       * {
         margin: 0;
@@ -12,377 +12,160 @@
       }
 
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: Arial, sans-serif;
+        background-color: #e8e8e8;
         min-height: 100vh;
         padding: 20px;
       }
 
       .container {
-        max-width: 900px;
-        margin: 0 auto;
+        max-width: 500px;
+        margin: 50px auto;
         background: white;
         border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        border-top: 4px solid #4caf50;
       }
 
       .header {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        padding: 30px;
         text-align: center;
-        color: white;
-        position: relative;
-      }
-
-      .header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-      }
-
-      .header-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
+        padding: 30px 20px 20px;
+        background: white;
       }
 
       .logo-img {
-        height: 120px;
+        height: 60px;
         width: auto;
-        object-fit: contain;
-      }
-
-      .company-name {
-        font-size: 2.5em;
-        font-weight: 700;
-        margin: 0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      }
-
-      .company-subtitle {
-        font-size: 1.2em;
-        opacity: 0.9;
-        margin-top: 5px;
-      }
-
-      .validation-content {
-        padding: 40px;
-      }
-
-      .validation-header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .validation-title {
-        font-size: 2.2em;
-        color: #2d3748;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .check-icon {
-        width: 40px;
-        height: 40px;
-        background: #10b981;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 20px;
-      }
-
-      .certificate-id {
-        font-size: 1.3em;
-        color: #4f46e5;
-        font-weight: 600;
-        background: #f0f9ff;
-        padding: 10px 20px;
-        border-radius: 25px;
-        display: inline-block;
-        border: 2px solid #dbeafe;
-      }
-
-      .certificate-card {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        border-radius: 15px;
-        padding: 30px;
-        margin: 30px 0;
-        border-left: 5px solid #4f46e5;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-      }
-
-      .certificate-details {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-      }
-
-      .detail-item {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .detail-label {
-        font-size: 0.9em;
-        color: #6b7280;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 8px;
-        font-weight: 600;
-      }
-
-      .detail-value {
-        font-size: 1.1em;
-        color: #1f2937;
-        font-weight: 600;
-      }
-
-      .status-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: #10b981;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.95em;
-      }
-
-      .status-badge.verified {
-        background: #10b981;
-      }
-
-      .verification-details {
-        background: white;
-        border-radius: 10px;
-        padding: 25px;
-        margin-top: 20px;
-        border: 1px solid #e5e7eb;
-      }
-
-      .verification-title {
-        font-size: 1.3em;
-        color: #374151;
-        margin-bottom: 15px;
-        font-weight: 600;
-      }
-
-      .verification-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .verification-list li {
-        padding: 8px 0;
-        border-bottom: 1px solid #f3f4f6;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .verification-list li:last-child {
-        border-bottom: none;
-      }
-
-      .check-small {
-        width: 18px;
-        height: 18px;
-        background: #10b981;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 12px;
-        flex-shrink: 0;
-      }
-
-      .footer {
-        background: #1f2937;
-        color: white;
-        padding: 30px;
-        text-align: center;
-      }
-
-      .footer-content {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .footer h3 {
-        margin-bottom: 15px;
-        font-size: 1.2em;
-      }
-
-      .footer p {
-        opacity: 0.8;
-        line-height: 1.6;
         margin-bottom: 20px;
       }
 
-      .copyright {
-        font-size: 0.9em;
-        opacity: 0.6;
-        border-top: 1px solid #374151;
-        padding-top: 20px;
-        margin-top: 20px;
+      .validation-status {
+        color: #4caf50;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
       }
 
-      .download-btn {
-        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-        color: white;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: transform 0.2s;
+      .content {
+        padding: 0 20px 30px;
+        text-align: center;
+        line-height: 1.6;
+        color: #333;
       }
 
-      .download-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+      .certificate-text {
+        font-size: 16px;
+        margin-bottom: 15px;
       }
 
+      .highlight-name {
+        font-weight: bold;
+        color: #000;
+      }
+
+      .program-details {
+        font-weight: bold;
+        color: #000;
+      }
+
+      .date-range {
+        color: #666;
+        font-size: 15px;
+      }
+
+      /* Mobile Responsive */
       @media (max-width: 768px) {
-        .certificate-details {
-          grid-template-columns: 1fr;
+        body {
+          padding: 10px;
         }
 
-        .company-name {
-          font-size: 2em;
+        .container {
+          margin: 20px auto;
+          max-width: 95%;
         }
 
-        .validation-title {
-          font-size: 1.8em;
-          flex-direction: column;
-          gap: 10px;
+        .header {
+          padding: 20px 15px 15px;
+        }
+
+        .logo-img {
+          height: 50px;
+        }
+
+        .validation-status {
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+
+        .content {
+          padding: 0 15px 25px;
+        }
+
+        .certificate-text {
+          font-size: 15px;
+        }
+
+        .date-range {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          margin: 10px auto;
+          border-radius: 10px;
+        }
+
+        .header {
+          padding: 15px 10px 10px;
+        }
+
+        .logo-img {
+          height: 45px;
+        }
+
+        .validation-status {
+          font-size: 18px;
+        }
+
+        .content {
+          padding: 0 10px 20px;
+        }
+
+        .certificate-text {
+          font-size: 14px;
+        }
+
+        .date-range {
+          font-size: 13px;
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <header class="header">
-        <div class="header-content">
-          <div class="logo">
-            <img
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZGI2xFDicxZWw7jkMoTAlYIC_jNDCRATttMWnTslg79OrZLyQLiM75axhNOAwx-5W8GOCvIXpat7imgp3fyQ6rGOXjwRN_7Uy458K0DxhN2b2qfRq3U1B2UVz0txq0pVEij8jDYdvC9Cy9gX-17kReVPO8cemuxvua0xaTCDZZ26KRNYoMe9FmikafaEa/s320/0ada0ae5b69f49b12551cdf22d6e0010.png"
-              alt="ApexPlanet Software Logo"
-              class="logo-img"
-            />
-          </div>
-        </div>
-      </header>
+      <div class="header">
+        <img
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZGI2xFDicxZWw7jkMoTAlYIC_jNDCRATttMWnTslg79OrZLyQLiM75axhNOAwx-5W8GOCvIXpat7imgp3fyQ6rGOXjwRN_7Uy458K0DxhN2b2qfRq3U1B2UVz0txq0pVEij8jDYdvC9Cy9gX-17kReVPO8cemuxvua0xaTCDZZ26KRNYoMe9FmikafaEa/s320/0ada0ae5b69f49b12551cdf22d6e0010.png"
+          alt="ApexPlanet Logo"
+          class="logo-img"
+        />
 
-      <main class="validation-content">
-        <div class="validation-header">
-          <h2 class="validation-title">
-            <span class="check-icon">✓</span>
-            Certificate Verified
-          </h2>
-          <div class="certificate-id">APSPL255454</div>
-        </div>
+        <div class="validation-status">Certificate Validated</div>
+      </div>
 
-        <div class="certificate-card">
-          <div class="certificate-details">
-            <div class="detail-item">
-              <span class="detail-label">Certificate Holder</span>
-              <span class="detail-value">Karanam Chandrasekhar Rao</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label">Program</span>
-              <span class="detail-value">Web Development Internship</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label">Duration</span>
-              <span class="detail-value">6 Weeks</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label">Completion Date</span>
-              <span class="detail-value">July 15, 2025</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label">Grade</span>
-              <span class="detail-value">A+</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label">Status</span>
-              <div class="status-badge verified">
-                <span class="check-small">✓</span>
-                Verified & Authentic
-              </div>
-            </div>
-          </div>
-
-          <div class="verification-details">
-            <h3 class="verification-title">Verification Details</h3>
-            <ul class="verification-list">
-              <li>
-                <span class="check-small">✓</span>
-                Certificate digitally signed and secured
-              </li>
-              <li>
-                <span class="check-small">✓</span>
-                Issued by authorized ApexPlanet officials
-              </li>
-              <li>
-                <span class="check-small">✓</span>
-                AICTE approved internship program
-              </li>
-              <li>
-                <span class="check-small">✓</span>
-                Verified completion of all required modules
-              </li>
-              <li>
-                <span class="check-small">✓</span>
-                Industry-standard curriculum completed
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="text-align: center">
-          <button class="download-btn">Download Certificate</button>
-        </div>
-      </main>
-
-      <footer class="footer">
-        <div class="footer-content">
-          <h3>About Certificate Verification</h3>
-          <p>
-            This certificate has been verified against our secure database. All
-            ApexPlanet Software Pvt Ltd certificates are digitally signed and
-            can be verified using the unique certificate ID.
-          </p>
-          <p>
-            For any queries regarding this certificate, please contact us at
-            certificates@apexplanet.in
-          </p>
-          <div class="copyright">
-            © Copyright © 2022 ApexPlanet Software Pvt Ltd. All rights reserved
-          </div>
-        </div>
-      </footer>
+      <div class="content">
+        <p class="certificate-text">
+          This certificate is valid. Congratulations,
+          <span class="highlight-name">Karnam Chandra Sekhar Rao</span> You have
+          successfully completed the internship in
+          <span class="program-details"
+            >Web Development with HTML, CSS, and JavaScript</span
+          >
+          <span class="date-range">from 21 May, 2025 to 05 July, 2025.</span>
+        </p>
+      </div>
     </div>
   </body>
 </html>
