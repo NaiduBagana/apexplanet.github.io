@@ -58,63 +58,11 @@
         margin-bottom: 20px;
       }
 
-      .logo-icon {
-        width: 60px;
-        height: 60px;
-        margin-right: 15px;
-        position: relative;
-      }
-
-      .logo-a {
-        position: absolute;
-        font-size: 40px;
-        font-weight: bold;
-        color: white;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .wing {
-        position: absolute;
-        width: 25px;
-        height: 8px;
-        background: #4ade80;
-        border-radius: 10px;
-        top: 15px;
-        left: 5px;
-      }
-
-      .wing:nth-child(2) {
-        top: 25px;
-        left: 8px;
-        width: 20px;
-      }
-
-      .wing:nth-child(3) {
-        top: 35px;
-        left: 12px;
-        width: 15px;
-      }
-
-      .orbit {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(79, 172, 254, 0.7);
-        border-radius: 50%;
-        top: 5px;
-        left: 5px;
-        animation: rotate 3s linear infinite;
-      }
-
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
+      .logo-img {
+        height: 80px;
+        width: auto;
+        margin-right: 20px;
+        object-fit: contain;
       }
 
       .company-name {
@@ -338,13 +286,11 @@
       <header class="header">
         <div class="header-content">
           <div class="logo">
-            <div class="logo-icon">
-              <div class="wing"></div>
-              <div class="wing"></div>
-              <div class="wing"></div>
-              <div class="orbit"></div>
-              <div class="logo-a">A</div>
-            </div>
+            <img
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZGI2xFDicxZWw7jkMoTAlYIC_jNDCRATttMWnTslg79OrZLyQLiM75axhNOAwx-5W8GOCvIXpat7imgp3fyQ6rGOXjwRN_7Uy458K0DxhN2b2qfRq3U1B2UVz0txq0pVEij8jDYdvC9Cy9gX-17kReVPO8cemuxvua0xaTCDZZ26KRNYoMe9FmikafaEa/s320/0ada0ae5b69f49b12551cdf22d6e0010.png"
+              alt="ApexPlanet Software Logo"
+              class="logo-img"
+            />
             <div>
               <h1 class="company-name">ApexPlanet</h1>
               <p class="company-subtitle">Software Pvt.Ltd</p>
@@ -366,7 +312,7 @@
           <div class="certificate-details">
             <div class="detail-item">
               <span class="detail-label">Certificate Holder</span>
-              <span class="detail-value">Karnam Chandra Sekhar Rao</span>
+              <span class="detail-value">John Doe</span>
             </div>
             <div class="detail-item">
               <span class="detail-label">Program</span>
